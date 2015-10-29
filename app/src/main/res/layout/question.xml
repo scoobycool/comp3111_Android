@@ -11,6 +11,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!--
+    <Button
+        android:id="@+id/quote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        -->
+    <TextView
+        android:id="@+id/timeago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize = "8sp"
+        android:textStyle="italic"
+        />
+
+
+
     <TextView
         android:id="@+id/head_desc"
         android:layout_width="wrap_content"

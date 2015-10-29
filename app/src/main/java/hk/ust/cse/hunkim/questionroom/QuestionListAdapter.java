@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import android.text.format.DateUtils;
+
 import com.firebase.client.Query;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Date;
 
 import hk.ust.cse.hunkim.questionroom.db.DBUtil;
 import hk.ust.cse.hunkim.questionroom.question.Question;
@@ -56,6 +59,13 @@ public class QuestionListAdapter extends FirebaseListAdapter<Question> {
         echoButton.setText("" + echo);
         echoButton.setTextColor(Color.BLUE);
 
+        /*
+        Button quoteButton = (Button) view.findViewById(R.id.quote);
+        quoteButton.setText("quote");
+        quoteButton.setTextColor(Color.YELLOW);
+        quoteButton.setTag(question.getKey());
+        */
+
 
         echoButton.setTag(question.getKey()); // Set tag for button
 
@@ -69,13 +79,33 @@ public class QuestionListAdapter extends FirebaseListAdapter<Question> {
                 }
 
         );
+        /*
+        quoteButton.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view){
+                        MainActivity m = (MainActivity) view.getContext();
+                        m.getQuote((String) view.getTag());
 
+
+                    }
+
+
+
+                }
+        );
+        */
         String msgString = "";
 
         question.updateNewQuestion();
         if (question.isNewQuestion()) {
             msgString += "<font color=red>NEW </font>";
         }
+
+        Long timenow = new Date().getTime();
+        String timeago = DateUtils.getRelativeTimeSpanString(question.getTimestamp(), timenow, 0, 131072).toString();
+        ((TextView) view.findViewById(R.id.timeago)).setText(timeago);
+
 
         msgString += "<B>" + question.getHead() + "</B>" + question.getDesc();
 

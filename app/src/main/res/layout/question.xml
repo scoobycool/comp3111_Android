@@ -5,11 +5,22 @@
     android:layout_height="fill_parent"
     android:orientation="horizontal">
 
-    <Button
+   <Button
         android:id="@+id/echo"
         android:drawableLeft="@drawable/like24"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:drawableLeft="@drawable/dislike"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/minusecho" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/showecho" />
 
     <!--
     <Button

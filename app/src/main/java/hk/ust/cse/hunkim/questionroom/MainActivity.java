@@ -25,7 +25,7 @@ import hk.ust.cse.hunkim.questionroom.question.Question;
 public class MainActivity extends ListActivity {
 
     // TODO: change this to your own Firebase URL
-    private static final String FIREBASE_URL = "https://classquestion.firebaseio.com/";
+    private static final String FIREBASE_URL = "https://comp3111ltf.firebaseio.com/";
 
     private String roomName;
     private Firebase mFirebaseRef;
@@ -142,7 +142,32 @@ public class MainActivity extends ListActivity {
             inputText.setText("");
         }
     }
+/*
+    public void getQuote(String key) {
+        final Firebase quoteRef = mFirebaseRef.child(key).child("wholeMsg");
 
+        quoteRef.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String MsgValue = (String) dataSnapshot.getValue();
+                        Log.e("Get quote(Success):", "" + MsgValue);
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(FirebaseError firebaseError) {
+
+                    }
+
+                }
+
+        );
+        dbutil.put(key);
+    }
+    */
     public void updateEcho(String key) {
         if (dbutil.contains(key)) {
             Log.e("Dupkey", "Key is already in the DB!");

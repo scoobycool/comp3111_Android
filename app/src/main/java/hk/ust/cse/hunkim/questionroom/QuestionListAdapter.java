@@ -56,8 +56,10 @@ public class QuestionListAdapter extends FirebaseListAdapter<Question> {
         // Map a Chat object to an entry in our listview
         int echo = question.getEcho();
         Button echoButton = (Button) view.findViewById(R.id.echo);
-        echoButton.setText("" + echo);
-        echoButton.setTextColor(Color.BLUE);
+        Button minusechoButton = (Button) view.findViewById(R.id.minusecho);
+        Button showechoButton = (Button) view.findViewById(R.id.showecho);
+        showechoButton.setText("" + echo);
+        showechoButton.setTextColor(Color.BLUE);
 
         /*
         Button quoteButton = (Button) view.findViewById(R.id.quote);
@@ -79,6 +81,20 @@ public class QuestionListAdapter extends FirebaseListAdapter<Question> {
                 }
 
         );
+        
+        minusechoButton.setTag(question.getKey()); // Set tag for button
+        minusechoButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        MainActivity m = (MainActivity) view.getContext();
+                        m.updateminusEcho((String) view.getTag());
+                    }
+                }
+
+        );
+        
+        
         /*
         quoteButton.setOnClickListener(
                 new View.OnClickListener(){
@@ -130,10 +146,22 @@ public class QuestionListAdapter extends FirebaseListAdapter<Question> {
 
         // http://stackoverflow.com/questions/8743120/how-to-grey-out-a-button
         // grey out our button
-        if (clickable) {
+      if (clickable) {
             echoButton.getBackground().setColorFilter(null);
         } else {
             echoButton.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
+            minusechoButton.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
+        }
+
+        minusechoButton.setClickable(clickable);
+        minusechoButton.setEnabled(clickable);
+        view.setClickable(clickable);
+
+        if (clickable) {
+            minusechoButton.getBackground().setColorFilter(null);
+        } else {
+            echoButton.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
+            minusechoButton.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
         }
 
 

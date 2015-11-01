@@ -126,6 +126,7 @@ public class QuestionListAdapter extends FirebaseListAdapter<Question> {
         msgString += "<B>" + question.getHead() + "</B>" + question.getDesc();
 
         ((TextView) view.findViewById(R.id.head_desc)).setText(Html.fromHtml(msgString));
+        /*
         view.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
@@ -135,7 +136,7 @@ public class QuestionListAdapter extends FirebaseListAdapter<Question> {
                                 }
 
         );
-
+*/
         // check if we already clicked
         boolean clickable = !dbUtil.contains(question.getKey());
 

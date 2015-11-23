@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-<<<<<<< HEAD
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -23,25 +22,16 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-=======
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
-<<<<<<< HEAD
 import org.json.JSONObject;
 
 import hk.ust.cse.hunkim.questionroom.db.DBHelper;
 import hk.ust.cse.hunkim.questionroom.db.DBUtil;
 import hk.ust.cse.hunkim.questionroom.question.Question;
-=======
-import hk.ust.cse.hunkim.questionroom.db.DBHelper;
-import hk.ust.cse.hunkim.questionroom.db.DBUtil;
-import hk.ust.cse.hunkim.questionroom.question.Question;
-
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
 public class MainActivity extends ListActivity {
 
     // TODO: change this to your own Firebase URL
@@ -51,14 +41,9 @@ public class MainActivity extends ListActivity {
     private Firebase mFirebaseRef;
     private ValueEventListener mConnectedListener;
     private QuestionListAdapter mChatListAdapter;
-<<<<<<< HEAD
     private boolean LoggedIn=false;
     private DBUtil dbutil;
     private TextView username;
-=======
-
-    private DBUtil dbutil;
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
 
     public DBUtil getDbutil() {
         return dbutil;
@@ -67,7 +52,6 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
         FacebookSdk.sdkInitialize(getApplicationContext());
         CallbackManager callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
@@ -118,10 +102,6 @@ public class MainActivity extends ListActivity {
                         Log.d("FB",exception.toString());
                     }
                 });
-=======
-
-        //initialized once with an Android context.
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
         Firebase.setAndroidContext(this);
 
         setContentView(R.layout.activity_main);
@@ -162,15 +142,10 @@ public class MainActivity extends ListActivity {
         // get the DB Helper
         DBHelper mDbHelper = new DBHelper(this);
         dbutil = new DBUtil(mDbHelper);
-<<<<<<< HEAD
 
     }
 
 
-=======
-    }
-
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
     @Override
     public void onStart() {
         super.onStart();
@@ -228,7 +203,6 @@ public class MainActivity extends ListActivity {
             inputText.setText("");
         }
     }
-<<<<<<< HEAD
 
 public void UserName_Output(String key) {
     if (dbutil.contains(key)) {
@@ -256,34 +230,6 @@ public void UserName_Output(String key) {
     dbutil.put(key);
 }
 
-=======
-/*
-    public void getQuote(String key) {
-        final Firebase quoteRef = mFirebaseRef.child(key).child("wholeMsg");
-
-        quoteRef.addListenerForSingleValueEvent(
-                new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        String MsgValue = (String) dataSnapshot.getValue();
-                        Log.e("Get quote(Success):", "" + MsgValue);
-
-
-
-                    }
-
-                    @Override
-                    public void onCancelled(FirebaseError firebaseError) {
-
-                    }
-
-                }
-
-        );
-        dbutil.put(key);
-    }
-    */
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
     public void updateEcho(String key) {
         if (dbutil.contains(key)) {
             Log.e("Dupkey", "Key is already in the DB!");

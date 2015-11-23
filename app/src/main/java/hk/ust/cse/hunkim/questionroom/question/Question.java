@@ -23,10 +23,7 @@ public class Question implements Comparable<Question> {
     private int echo;
     private int order;
     private boolean newQuestion;
-<<<<<<< HEAD
     private String Fbname;
-=======
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
 
     public String getDateString() {
         return dateString;
@@ -62,10 +59,7 @@ public class Question implements Comparable<Question> {
         this.headLastChar = head.substring(head.length() - 1);
 
         this.timestamp = new Date().getTime();
-<<<<<<< HEAD
         this.Fbname ="";
-=======
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
     }
 
     /**
@@ -155,10 +149,7 @@ public class Question implements Comparable<Question> {
         this.key = key;
     }
 
-<<<<<<< HEAD
     public void setFbname(String Fbname){this.Fbname=Fbname;}
-=======
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
     /**
      * New one/high echo goes bottom
      * @param other other chat

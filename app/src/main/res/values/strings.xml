@@ -9,9 +9,6 @@
 
     <string name="error_invalid_room_name">Use only alphanumeric characters</string>
     <string name="error_field_required">This field is required</string>
-<<<<<<< HEAD
     <string name="facebook_app_id">534447356721261</string>
-=======
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
 
 </resources>

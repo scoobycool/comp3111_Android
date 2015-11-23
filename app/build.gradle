@@ -37,20 +37,14 @@ android {
         abortOnError false
     }
 }
-<<<<<<< HEAD
 repositories {
     mavenCentral()
 }
-=======
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
-<<<<<<< HEAD
     compile 'com.facebook.android:facebook-android-sdk:4.7.0'
-=======
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
 
     // Firebase
     compile 'com.firebase:firebase-client-android:2.3.1+'

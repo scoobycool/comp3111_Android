@@ -4,7 +4,6 @@
     android:layout_height="fill_parent"
 
     tools:context=".MainActivity">
-<<<<<<< HEAD
     <TextView
     android:id="@+id/username"
     android:layout_width="wrap_content"
@@ -20,9 +19,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp" />
-=======
-
->>>>>>> 5a90433fd98e5daf82dc71a9e56e23221e4033c4
 
     <Button
         android:id="@+id/close"

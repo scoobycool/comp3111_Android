@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+
+   <Button
+        android:id="@+id/echo"
+        android:drawableLeft="@drawable/like24"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:drawableLeft="@drawable/dislike"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/minusecho" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/showecho" />
+
+    <!--
+    <Button
+        android:id="@+id/quote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        -->
+    <TextView
+        android:id="@+id/timeago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize = "8sp"
+        android:textStyle="italic"
+        />
+
+
+
+    <TextView
+        android:id="@+id/head_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp" />
+</LinearLayout>
